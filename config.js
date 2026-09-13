@@ -6,6 +6,6 @@
 //   2. Datei -> Freigeben -> Im Web veröffentlichen
 //   3. Tab "Inventar" auswählen, Format "Kommagetrennte Werte (.csv)"
 //   4. "Veröffentlichen" klicken und die angezeigte URL hier eintragen
-window.SKINCARE_CONFIG = {
+window.SKINCARE_CONFIG = {https://docs.google.com/spreadsheets/d/11xbChdNn4jgmZrFLt5ZGTljqh3RueQr3cOluZopO-SU/edit?usp=sharing
   sheetCsvUrl: "",
 };
