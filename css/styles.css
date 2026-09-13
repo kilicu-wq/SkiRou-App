@@ -64,6 +64,79 @@ body {
   white-space: nowrap;
 }
 
+.lock-screen[hidden] {
+  display: none;
+}
+
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 16px;
+}
+
+.lock-card {
+  width: 100%;
+  max-width: 300px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.lock-card h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lock-hint {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.lock-input {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 20px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.lock-error {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--status-empty-text);
+}
+
+.lock-submit {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--fill-primary);
+  color: var(--on-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .app {
   max-width: 480px;
   margin: 0 auto;

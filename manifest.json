@@ -1,6 +1,6 @@
 {
-  "name": "Skincare Routine",
-  "short_name": "Skincare",
+  "name": "SkiRou",
+  "short_name": "SkiRou",
   "description": "Skincare-Routine und Inventar, angebunden an Google Sheets.",
   "start_url": ".",
   "scope": ".",

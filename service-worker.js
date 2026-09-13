@@ -7,6 +7,7 @@ var APP_SHELL = [
   "./css/styles.css",
   "./js/app.js",
   "./js/routines.js",
+  "./js/auth.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
 ];
