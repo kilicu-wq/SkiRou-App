@@ -9,21 +9,24 @@ Progressive Web App, ohne eigenes Backend.
 
 - **Routine**: Wochentag- und Morgen/Abend-Auswahl, nummerierte Schritt-Liste
   je Produkt
-- **Routine-Sets**: mehrere Varianten (Standard/Sommer/Winter/Urlaub) zum
-  Umschalten
+- **Routine-Sets**: aktuell "Standard", die Struktur erlaubt beliebig weitere
+  Sets (z. B. Sommer/Winter/Urlaub) zum Umschalten
 - **Inventar**: durchsuchbare Produktliste mit Marke, Anwendungsschritt und
   Status-Badge (Ungeöffnet/Geöffnet/Leer), read-only aus Google Sheets
 - **Offline-fähig**: Service Worker cached App-Shell und den zuletzt
   geladenen Inventar-Stand
+- **Code-Sperre**: einfache 4-stellige PIN (`0123`) beim ersten Öffnen, kein
+  echter Schutz, nur eine kleine Hürde auf dem Familien-Handy
 
 ## Architektur
 
 - Kein Backend, kein OAuth: das Google Sheet wird über
   *Datei → Freigeben → Im Web veröffentlichen* als CSV bereitgestellt und von
   der App direkt per `fetch()` gelesen.
-- Die Routinen liegen **nicht** im Sheet, sondern als JSON-ähnliche Struktur
-  im Code (`js/routines.js`). Änderungen an der Routine werden im Chat
-  besprochen, die Datei angepasst, committed und neu deployed.
+- Die Routinen liegen **nicht** im Sheet, sondern als JSON im Repo
+  (`data/routines.json`), die die App per `fetch()` lädt. Änderungen an der
+  Routine werden im Chat besprochen, die Datei angepasst, committed und neu
+  deployed.
 - Produktstatus ist bewusst einfach gehalten: `Ungeöffnet` (Vorrat/Ersatz),
   `Geöffnet` (aktuell in Benutzung), `Leer` (muss ersetzt werden).
 
@@ -53,16 +56,26 @@ window.SKINCARE_CONFIG = {
 
 ### 3. Routine anpassen
 
-Die tatsächliche Routine (welche Produkte an welchem Wochentag morgens/abends)
-steht in [`js/routines.js`](js/routines.js):
+Die tatsächliche Routine (welche Produkte an welchem Wochentag morgens/abends
+in welcher Reihenfolge) steht in [`data/routines.json`](data/routines.json):
 
-- `SKINCARE_PRODUCTS`: Katalog aller in der Routine verwendeten Produkte
-  (Name + Anwendungsschritt)
-- `SKINCARE_ROUTINE_SETS`: pro Set (`Standard`, `Sommer`, `Winter`, `Urlaub`)
-  für jeden Wochentag die Produkt-Reihenfolge für Morgen und Abend
+- `sets`: pro Routine-Set (z. B. `Standard`) für jeden Wochentag die
+  Schritt-Liste für `morgen` und `abend`. Jeder Schritt hat
+  `step` (Anwendungsschritt/Kategorie), `product` (Produktname -- sollte
+  exakt mit dem Namen im Inventar-Sheet übereinstimmen) und optional `note`
+  (z. B. "nur T-Zone", "optional, alle 2 Wochen").
+- `adHoc`: Produkte ohne festen Tag (z. B. ein Spot-Treatment "bei Bedarf"),
+  werden in der Routine-Ansicht immer zusätzlich angezeigt.
+- `reserves` / `reserveStock`: Zuordnung von Ersatzprodukten für den Fall,
+  dass ein aktives Produkt leer ist -- aktuell nur zur Referenz, wird noch
+  nicht in der UI angezeigt.
 
-Diese Datei bei Bedarf im Chat besprechen und aktualisieren lassen, dann
-committen und neu deployen.
+Neue Anwendungsschritte (Kategorien) brauchen ein Icon in
+[`js/routines.js`](js/routines.js) (`SKINCARE_STEP_ICONS`), sonst wird ein
+generisches Icon angezeigt.
+
+Änderungen an der Routine am besten im separaten Planungs-Chat besprechen
+und die fertige Struktur hier einpflegen, committen und neu deployen.
 
 ## Lokal testen
 
@@ -88,13 +101,15 @@ Danach `http://localhost:8080` im Browser öffnen.
 ## Projektstruktur
 
 ```
-index.html              App-Shell (Tabs, Routine- und Inventar-Ansicht)
+index.html              App-Shell (Tabs, Routine- und Inventar-Ansicht, Lock-Screen)
 css/styles.css           Styling (hell/dunkel automatisch)
-js/routines.js           Produktkatalog + Routine-Sets (hier anpassen)
+data/routines.json       Routine-Sets, Schritte, Bei-Bedarf, Ersatzprodukte (hier anpassen)
+js/routines.js           Icon-Zuordnung je Anwendungsschritt + Wochentage
+js/auth.js               Einfache PIN-Sperre (0123)
 js/app.js                App-Logik: Rendering, Google-Sheets-CSV-Fetch, Caching
 config.js                Google-Sheets-CSV-URL
 manifest.json            PWA-Manifest
-service-worker.js        Offline-Caching (App-Shell + Inventar-CSV)
+service-worker.js        Offline-Caching (App-Shell + Routine-JSON + Inventar-CSV)
 icons/                   App-Icons
 docs/skincare-inventar-vorlage.xlsx   Google-Sheets-Vorlage zum Hochladen
 ```

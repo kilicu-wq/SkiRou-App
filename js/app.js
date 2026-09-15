@@ -59,15 +59,34 @@
 
   // ---- Routine view ----
 
+  var routineData = null; // geladen aus data/routines.json, siehe loadRoutineData()
+
+  function loadRoutineData() {
+    return fetch("data/routines.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (json) {
+        routineData = json;
+      })
+      .catch(function () {
+        routineData = { sets: {}, adHoc: [] };
+      });
+  }
+
   function initSetSelect() {
     var select = document.getElementById("set-select");
     select.innerHTML = "";
-    Object.keys(window.SKINCARE_ROUTINE_SETS).forEach(function (key) {
+    Object.keys(routineData.sets).forEach(function (key) {
       var opt = document.createElement("option");
       opt.value = key;
-      opt.textContent = window.SKINCARE_ROUTINE_SETS[key].label || key;
+      opt.textContent = routineData.sets[key].label || key;
       select.appendChild(opt);
     });
+    if (!routineData.sets[state.set]) {
+      state.set = Object.keys(routineData.sets)[0];
+    }
     select.value = state.set;
     select.addEventListener("change", function () {
       state.set = select.value;
@@ -114,38 +133,69 @@
     btnAbend.addEventListener("click", function () { apply("abend"); });
   }
 
+  function buildStepRow(step, index) {
+    var icon = window.SKINCARE_STEP_ICONS[step.step] || "•";
+    var row = document.createElement("div");
+    row.className = "step-row";
+    row.innerHTML =
+      '<div class="step-icon">' + icon + "</div>" +
+      '<div class="step-body">' +
+        '<div class="step-name"></div>' +
+        '<div class="step-category"></div>' +
+        '<div class="step-note"></div>' +
+      "</div>";
+    if (index !== null) {
+      var badge = document.createElement("div");
+      badge.className = "step-index";
+      badge.textContent = index + 1;
+      row.insertBefore(badge, row.firstChild);
+    }
+    row.querySelector(".step-name").textContent = step.product;
+    row.querySelector(".step-category").textContent = step.step;
+    var noteEl = row.querySelector(".step-note");
+    if (step.note) {
+      noteEl.textContent = step.note;
+    } else {
+      noteEl.hidden = true;
+    }
+    return row;
+  }
+
   function renderSteps() {
     var list = document.getElementById("step-list");
     var emptyHint = document.getElementById("empty-routine");
-    var routineSet = window.SKINCARE_ROUTINE_SETS[state.set];
+    var routineSet = routineData.sets[state.set];
     var dayPlan = routineSet && routineSet.days[state.day];
-    var productIds = (dayPlan && dayPlan[state.time]) || [];
+    var steps = (dayPlan && dayPlan[state.time]) || [];
 
     list.innerHTML = "";
 
-    if (productIds.length === 0) {
+    if (steps.length === 0) {
       emptyHint.hidden = false;
+    } else {
+      emptyHint.hidden = true;
+      steps.forEach(function (step, index) {
+        list.appendChild(buildStepRow(step, index));
+      });
+    }
+
+    renderAdHoc();
+  }
+
+  function renderAdHoc() {
+    var section = document.getElementById("adhoc-section");
+    var list = document.getElementById("adhoc-list");
+    var items = (routineData && routineData.adHoc) || [];
+
+    if (items.length === 0) {
+      section.hidden = true;
       return;
     }
-    emptyHint.hidden = true;
 
-    productIds.forEach(function (productId, index) {
-      var product = window.SKINCARE_PRODUCTS[productId];
-      if (!product) return;
-      var icon = window.SKINCARE_STEP_ICONS[product.step] || "•";
-
-      var row = document.createElement("div");
-      row.className = "step-row";
-      row.innerHTML =
-        '<div class="step-index">' + (index + 1) + "</div>" +
-        '<div class="step-icon">' + icon + "</div>" +
-        '<div class="step-body">' +
-          '<div class="step-name"></div>' +
-          '<div class="step-category"></div>' +
-        "</div>";
-      row.querySelector(".step-name").textContent = product.name;
-      row.querySelector(".step-category").textContent = product.step;
-      list.appendChild(row);
+    section.hidden = false;
+    list.innerHTML = "";
+    items.forEach(function (step) {
+      list.appendChild(buildStepRow(step, null));
     });
   }
 
@@ -345,12 +395,15 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initTabs();
-    initSetSelect();
     initDayRow();
     initTimeToggle();
     initInventorySearch();
     initOfflineBadge();
-    renderSteps();
     registerServiceWorker();
+
+    loadRoutineData().then(function () {
+      initSetSelect();
+      renderSteps();
+    });
   });
 })();

@@ -1,4 +1,4 @@
-var CACHE_NAME = "skincare-cache-v1";
+var CACHE_NAME = "skirou-cache-v2";
 var APP_SHELL = [
   "./",
   "./index.html",
@@ -8,6 +8,7 @@ var APP_SHELL = [
   "./js/app.js",
   "./js/routines.js",
   "./js/auth.js",
+  "./data/routines.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
 ];

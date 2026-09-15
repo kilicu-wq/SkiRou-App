@@ -1,0 +1,151 @@
+{
+  "reservesInfo": "JSON kennt keine Kommentare, daher hier als Datenfelder: 'reserves' ist die direkte Ersatz-Zuordnung (aktives Produkt -> Ersatzprodukt), 'reserveStock' sind weitere ungeoeffnete Reserveprodukte, die aktuell nicht in der Rotation sind.",
+  "sets": {
+    "Standard": {
+      "label": "Standard",
+      "days": {
+        "Mo": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "kurz/optional" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral" },
+            { "step": "Essenz", "product": "Green Tea Ceramide Milk Barrier Essence" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
+            { "step": "Serum", "product": "Niacinamide 10% + Zinc 1%", "note": "nur T-Zone" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+", "note": "zusätzlich auf Wangen/Kinn" }
+          ]
+        },
+        "Di": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Peeling", "product": "Lactic Acid 10% + HA" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Serum", "product": "Ceramide Treatment" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+" }
+          ]
+        },
+        "Mi": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral" },
+            { "step": "Essenz", "product": "Green Tea Ceramide Milk Barrier Essence" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Alternative: Weightless Sun Fluid SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
+            { "step": "Serum", "product": "Zinc Teca Blemish Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" }
+          ]
+        },
+        "Do": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral" },
+            { "step": "Serum", "product": "Ceramide Treatment" },
+            { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+" }
+          ]
+        },
+        "Fr": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Essenz", "product": "Green Tea Ceramide Milk Barrier Essence" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Peeling", "product": "Lactic Acid 10% + HA" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Serum", "product": "Zinc Teca Blemish Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" }
+          ]
+        },
+        "Sa": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral" },
+            { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Alternative: Weightless Sun Fluid SPF50+" }
+          ],
+          "abend": [
+            { "step": "Peeling", "product": "Vitamin C Glow Revealing Microdermabrasion", "note": "optional, alle 2 Wochen, vor der restlichen Routine" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Ceramide Treatment" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" }
+          ]
+        },
+        "So": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Essenz", "product": "Green Tea Ceramide Milk Barrier Essence" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral" },
+            { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+" },
+            { "step": "Maske", "product": "Drink Up Intensive Overnight Hydrating Mask", "note": "optional" }
+          ]
+        }
+      }
+    }
+  },
+  "adHoc": [
+    { "step": "Sonstiges", "product": "Zitaid SOS Spray für Unreinheiten & Rötungen", "note": "Bei Bedarf, punktuell auf Unreinheiten am Kinn" }
+  ],
+  "reserves": {
+    "No.4 Toner Hydrating Glow Mineral": "No.4 Toner Hydrating Glow Mineral (Ersatz)",
+    "Ascorbic C15 Vitamin C Serum": "Ascorbic C15 Vitamin C Serum (Ersatz)",
+    "Zitaid SOS Spray für Unreinheiten & Rötungen": "Zitaid SOS Spray für Unreinheiten & Rötungen (Ersatz)",
+    "Cicaplast Gel B5": "Aqua Squalane Moisturizing Cream (Wrinkle Lifting)"
+  },
+  "reserveStock": [
+    "Black Rice Hyaluronic Toner",
+    "C4 Hydrating Milky Toner",
+    "No.9 Glow Boosting Toner",
+    "345 Relief Cream Mist",
+    "O10 Liquid Hydration",
+    "Advanced Snail 96 Mucin Power Essence",
+    "Glazing Milk Essence",
+    "Copper Peptide Serum",
+    "Derma-Peptides 35% Serum",
+    "medicube Zero Pore Pad",
+    "Green Tomato NMN Ampoule (Speedi)",
+    "Zinc Tea SOS Trial"
+  ]
+}
