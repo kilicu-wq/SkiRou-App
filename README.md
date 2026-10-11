@@ -66,9 +66,15 @@ in welcher Reihenfolge) steht in [`data/routines.json`](data/routines.json):
   (z. B. "nur T-Zone", "optional, alle 2 Wochen").
 - `adHoc`: Produkte ohne festen Tag (z. B. ein Spot-Treatment "bei Bedarf"),
   werden in der Routine-Ansicht immer zusätzlich angezeigt.
-- `reserves` / `reserveStock`: Zuordnung von Ersatzprodukten für den Fall,
-  dass ein aktives Produkt leer ist -- aktuell nur zur Referenz, wird noch
-  nicht in der UI angezeigt.
+- `ersatz`: pro aktivem Produkt eine priorisierte Liste von Ersatzprodukten
+  (Reihenfolge = Priorität) für den Fall, dass es leer ist.
+  `ersatzHinweise` enthält ergänzende Freitext-Hinweise dazu.
+- `reserveStock`: ungeöffnete Reserveprodukte, aktuell nicht in Rotation.
+- `ausgeschlossen`: Produkte, die bewusst nicht in der Routine verwendet
+  werden, mit Grund (z. B. Schwangerschaft/Stillzeit, nicht fürs Gesicht).
+
+Diese vier Felder sind aktuell nur zur Referenz hinterlegt und werden noch
+nicht in der UI angezeigt.
 
 Neue Anwendungsschritte (Kategorien) brauchen ein Icon in
 [`js/routines.js`](js/routines.js) (`SKINCARE_STEP_ICONS`), sonst wird ein
