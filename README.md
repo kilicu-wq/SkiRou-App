@@ -68,13 +68,16 @@ in welcher Reihenfolge) steht in [`data/routines.json`](data/routines.json):
   werden in der Routine-Ansicht immer zusätzlich angezeigt.
 - `ersatz`: pro aktivem Produkt eine priorisierte Liste von Ersatzprodukten
   (Reihenfolge = Priorität) für den Fall, dass es leer ist.
-  `ersatzHinweise` enthält ergänzende Freitext-Hinweise dazu.
+  `ersatzHinweise` enthält ergänzende Freitext-Hinweise zu einzelnen
+  Produkten (z. B. ausgelaufene Produkte, Hinweise, die nicht in eine
+  Prioritätsliste passen). `hinweise` ist eine allgemeine Hinweisliste, die
+  an keinem einzelnen Produkt hängt (z. B. laufende Produkt-Tests).
 - `reserveStock`: ungeöffnete Reserveprodukte, aktuell nicht in Rotation.
 - `ausgeschlossen`: Produkte, die bewusst nicht in der Routine verwendet
   werden, mit Grund (z. B. Schwangerschaft/Stillzeit, nicht fürs Gesicht).
 
-Diese vier Felder sind aktuell nur zur Referenz hinterlegt und werden noch
-nicht in der UI angezeigt.
+Diese Felder sind aktuell nur zur Referenz hinterlegt und werden noch nicht
+in der UI angezeigt.
 
 Neue Anwendungsschritte (Kategorien) brauchen ein Icon in
 [`js/routines.js`](js/routines.js) (`SKINCARE_STEP_ICONS`), sonst wird ein
