@@ -56,8 +56,7 @@
             { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
             { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
             { "step": "Serum", "product": "Zinc Teca Blemish Serum" },
-            { "step": "Feuchtigkeitscreme", "product": "Zitcalm Anti-Redness Calming Moisturizer", "note": "T-Zone, Niacinamide Glow Cream ist leer, Zitcalm ist ölfrei/non-comedogenic und beruhigend, passt daher ebenfalls gut zur öligen T-Zone" },
-            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream", "note": "Wangen/Kinn" }
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream", "note": "ganzes Gesicht, vorläufig -- Zitcalm (bisheriger T-Zone-Ersatz) ist leer, bis auf Weiteres ein Produkt für T-Zone und Wangen/Kinn" }
           ]
         },
         "Do": {
@@ -106,7 +105,6 @@
           "abend": [
             { "step": "Reinigung", "product": "Oil-Based Cleanser" },
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
-            { "step": "Peeling", "product": "Vitamin C Glow Revealing Microdermabrasion", "note": "optional, alle 2 Wochen" },
             { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
             { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
             { "step": "Serum", "product": "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)" },
@@ -126,8 +124,7 @@
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
             { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
             { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
-            { "step": "Feuchtigkeitscreme", "product": "Zitcalm Anti-Redness Calming Moisturizer", "note": "T-Zone, Ersatz für leere Niacinamide Glow Cream" },
-            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+", "note": "Wangen/Kinn" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream", "note": "ganzes Gesicht, vorläufig -- Zitcalm (bisheriger T-Zone-Ersatz) ist leer, bis auf Weiteres ein Produkt für T-Zone und Wangen/Kinn" },
             { "step": "Maske", "product": "Drink Up Intensive Overnight Hydrating Mask", "note": "optional" }
           ]
         }
@@ -138,7 +135,8 @@
     { "step": "Sonstiges", "product": "Zitaid SOS Spray für Unreinheiten & Rötungen", "note": "Bei Bedarf, punktuell auf Unreinheiten am Kinn" }
   ],
   "hinweise": [
-    "Green-Tomato-Tage (Di/Do/Sa Morgen): 'Pure Glycerin Face Serum (Oversized Edition)' ersetzt testweise 'Cicaplast Gel B5' unter Make-up -- 1:1-Test, keine endgültige Entscheidung. Falls Cicaplast Gel B5 doch besser funktioniert, einfach zurücktauschen."
+    "Green-Tomato-Tage (Di/Do/Sa Morgen): 'Pure Glycerin Face Serum (Oversized Edition)' ersetzt testweise 'Cicaplast Gel B5' unter Make-up -- 1:1-Test, keine endgültige Entscheidung. Falls Cicaplast Gel B5 doch besser funktioniert, einfach zurücktauschen.",
+    "Sheet-Korrektur nötig (Stand 2026-11-19): 'PDRN Pink Peptide Serum', 'PDRN Capsule Cream 100 (Elasticity & Balancing)', 'UV Essence Waterfull+ Tone-Up Sun Cream SPF50+' und 'AHA 30% + BHA 2% Peeling Solution' stehen im Inventar auf Status 'Geöffnet', obwohl sie wegen Schwangerschaft/Stillzeit (siehe 'ausgeschlossen') weiterhin nicht verwendet werden sollen -- laut Rückmeldung ein Versehen beim Pflegen des Sheets. Status dort bei Gelegenheit zurück auf 'Ungeöffnet' setzen. In der Routine bleiben sie draußen."
   ],
   "ersatz": {
     "Oil-Based Cleanser": [
@@ -181,9 +179,11 @@
     "No.4 Toner Hydrating Glow Mineral": "Ursprüngliches Hauptprodukt ist leer. Die bisherige Ersatz-Zeile 'No.4 Toner Hydrating Glow Mineral (Ersatz)' ist seit 2026-10-29 das aktive Produkt in der Routine (Status im Sheet auf Geöffnet setzen, falls noch nicht geschehen). Kein weiterer Ersatz mehr vorhanden -- bei erneutem Leerwerden siehe Ersatz-Eintrag für 'No.4 Toner Hydrating Glow Mineral (Ersatz)' (-> Black Rice Hyaluronic Toner).",
     "Madagascar Centella Probio-Cica Essence Toner": "'C4 Hydrating Milky Toner' ist KEIN direkter Ersatz (milchige, reichhaltigere Textur) -- nur bei Bedarf als zusätzliche Barriere-Pflege am Abend.",
     "Green Tea Ceramide Milk Barrier Essence": "Ist Leer und aktuell nicht Teil der Routine. Falls wieder gewünscht: 'Glazing Milk Essence'.",
-    "Niacinamide Glow Cream": "Ist leer. Ersetzt durch 'Zitcalm Anti-Redness Calming Moisturizer' (ölfrei, non-comedogenic, beruhigend -- passt zur öligen T-Zone und unterstützt zusätzlich bei Kinn-Unreinheiten). Hinweis: 'Zitcalm Anti-Redness Calming Moisturizer' ist laut Inventar vom 2026-11-19 nun seinerseits leer, siehe offene Rückfrage.",
+    "Niacinamide Glow Cream": "Ist leer. Wurde durch 'Zitcalm Anti-Redness Calming Moisturizer' ersetzt (ölfrei, non-comedogenic, beruhigend) -- siehe Hinweis zu 'Zitcalm Anti-Redness Calming Moisturizer', da auch das inzwischen leer ist.",
     "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)": "Nicht mehr am Donnerstag kombiniert mit AZID verwenden (rollte sich auf der Haut ab). Laut Inventar vom 2026-11-19 nur eine Geöffnet-Zeile vorhanden (aktiv an Di/Sa) -- die frühere RESERVE-Notiz zu einem dritten Verwendungstag war ein Irrtum.",
-    "Green Tomato NMN Pore Lifting Ampoule (5% SAP)": "Ist seit 2026-11-19 leer. Ersetzt durch 'Green Tomato NMN Pore-Tightening Ampoule Set' (war zuvor ungeöffnete Reserve, ist jetzt die aktive Geöffnet-Zeile)."
+    "Green Tomato NMN Pore Lifting Ampoule (5% SAP)": "Ist seit 2026-11-19 leer. Ersetzt durch 'Green Tomato NMN Pore-Tightening Ampoule Set' (war zuvor ungeöffnete Reserve, ist jetzt die aktive Geöffnet-Zeile).",
+    "Zitcalm Anti-Redness Calming Moisturizer": "War T-Zone-Ersatz für die leere Niacinamide Glow Cream, ist seit 2026-11-19 selbst leer. Übergangslösung seit 2026-11-19: 'Proteo-Repair Cream' für T-Zone und Wangen/Kinn gemeinsam (Mi/So Abend) statt getrennter Produkte -- noch kein dedizierter Ersatz gefunden, gerne im nächsten Routine-Gespräch besprechen.",
+    "Vitamin C Glow Revealing Microdermabrasion": "War optionales Peeling an Sa Abend (alle 2 Wochen), taucht seit 2026-11-19 nicht mehr im Inventar auf (vermutlich aufgebraucht). Schritt wurde aus der Sa-Abend-Routine entfernt, bis es einen Ersatz oder Nachkauf gibt."
   },
   "reserveStock": [
     "Black Rice Hyaluronic Toner",
