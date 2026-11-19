@@ -1,6 +1,6 @@
 {
   "stand": "2026-11-19",
-  "version": 4,
+  "version": 5,
   "info": "JSON kennt keine Kommentare, daher hier als Datenfelder dokumentiert: 'ersatz' ist die priorisierte Ersatzliste pro aktivem Produkt (Reihenfolge = Priorität), 'ersatzHinweise' sind Freitext-Hinweise zu Produkten (z.B. ausgelaufene/ersetzte Produkte, Hinweise die nicht ins Prioritätslisten-Schema passen), 'hinweise' sind allgemeine Freitext-Hinweise zur Routine (nicht an ein einzelnes Produkt gebunden, z.B. laufende Tests), 'reserveStock' sind ungeoeffnete Reserveprodukte aktuell ausserhalb der Rotation, 'ausgeschlossen' sind Produkte, die bewusst nicht in der Routine verwendet werden. Wichtige Regel fuer eine spaetere Verknuepfung mit dem Inventar-Sheet: bei doppelten Produktnamen (z.B. durch eine Ungeoeffnet-Reserve desselben Produkts) gilt die Zeile mit Status 'Geoeffnet' als das aktuell genutzte Produkt, die Ungeoeffnet-Zeile ist Reserve.",
   "sets": {
     "Standard": {
@@ -71,6 +71,8 @@
             { "step": "Reinigung", "product": "Oil-Based Cleanser" },
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
             { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Toner", "product": "C4 Hydrating Milky Toner", "note": "zusätzliche Barriere-Pflege für den Winter, nach dem Haupttoner" },
+            { "step": "Essenz", "product": "Advanced Snail 96 Mucin Power Essence", "note": "zusätzliche Barriere- und Feuchtigkeitspflege für den Winter" },
             { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
             { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
             { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+", "note": "Ceramide Treatment hier bewusst weggelassen – rollte sich in Kombi mit AZID auf der Haut ab; Glycerin Serum ist leichter und verträgt sich besser" }
@@ -123,6 +125,8 @@
             { "step": "Reinigung", "product": "Oil-Based Cleanser" },
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
             { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Toner", "product": "C4 Hydrating Milky Toner", "note": "zusätzliche Barriere-Pflege für den Winter, nach dem Haupttoner" },
+            { "step": "Essenz", "product": "Advanced Snail 96 Mucin Power Essence", "note": "zusätzliche Barriere- und Feuchtigkeitspflege für den Winter" },
             { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
             { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream", "note": "ganzes Gesicht, vorläufig -- Zitcalm (bisheriger T-Zone-Ersatz) ist leer, bis auf Weiteres ein Produkt für T-Zone und Wangen/Kinn" },
             { "step": "Maske", "product": "Drink Up Intensive Overnight Hydrating Mask", "note": "optional" }
@@ -136,7 +140,8 @@
   ],
   "hinweise": [
     "Green-Tomato-Tage (Di/Do/Sa Morgen): 'Pure Glycerin Face Serum (Oversized Edition)' ersetzt testweise 'Cicaplast Gel B5' unter Make-up -- 1:1-Test, keine endgültige Entscheidung. Falls Cicaplast Gel B5 doch besser funktioniert, einfach zurücktauschen.",
-    "Sheet-Korrektur nötig (Stand 2026-11-19): 'PDRN Pink Peptide Serum', 'PDRN Capsule Cream 100 (Elasticity & Balancing)', 'UV Essence Waterfull+ Tone-Up Sun Cream SPF50+' und 'AHA 30% + BHA 2% Peeling Solution' stehen im Inventar auf Status 'Geöffnet', obwohl sie wegen Schwangerschaft/Stillzeit (siehe 'ausgeschlossen') weiterhin nicht verwendet werden sollen -- laut Rückmeldung ein Versehen beim Pflegen des Sheets. Status dort bei Gelegenheit zurück auf 'Ungeöffnet' setzen. In der Routine bleiben sie draußen."
+    "Sheet-Korrektur nötig (Stand 2026-11-19): 'PDRN Pink Peptide Serum', 'PDRN Capsule Cream 100 (Elasticity & Balancing)', 'UV Essence Waterfull+ Tone-Up Sun Cream SPF50+' und 'AHA 30% + BHA 2% Peeling Solution' stehen im Inventar auf Status 'Geöffnet', obwohl sie wegen Schwangerschaft/Stillzeit (siehe 'ausgeschlossen') weiterhin nicht verwendet werden sollen -- laut Rückmeldung ein Versehen beim Pflegen des Sheets. Status dort bei Gelegenheit zurück auf 'Ungeöffnet' setzen. In der Routine bleiben sie draußen.",
+    "'O10 Liquid Hydration' ist für einen anderen Zweck gedacht (Make-up-Setting-Spray) und wird demnächst aus dem Inventar entfernt -- nicht als Essenz-Kandidat vorschlagen."
   ],
   "ersatz": {
     "Oil-Based Cleanser": [
@@ -173,11 +178,14 @@
     ],
     "Pure Glycerin Face Serum (Oversized Edition)": [
       { "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Ungeöffnet-Reserve laut Inventar" }
+    ],
+    "Urea Cica Repair+": [
+      { "product": "Panthenol Comfort", "note": "bereits als Nachfolger eingeplant, sobald der Mixa-Tiegel leer ist" }
     ]
   },
   "ersatzHinweise": {
     "No.4 Toner Hydrating Glow Mineral": "Ursprüngliches Hauptprodukt ist leer. Die bisherige Ersatz-Zeile 'No.4 Toner Hydrating Glow Mineral (Ersatz)' ist seit 2026-10-29 das aktive Produkt in der Routine (Status im Sheet auf Geöffnet setzen, falls noch nicht geschehen). Kein weiterer Ersatz mehr vorhanden -- bei erneutem Leerwerden siehe Ersatz-Eintrag für 'No.4 Toner Hydrating Glow Mineral (Ersatz)' (-> Black Rice Hyaluronic Toner).",
-    "Madagascar Centella Probio-Cica Essence Toner": "'C4 Hydrating Milky Toner' ist KEIN direkter Ersatz (milchige, reichhaltigere Textur) -- nur bei Bedarf als zusätzliche Barriere-Pflege am Abend.",
+    "Madagascar Centella Probio-Cica Essence Toner": "'C4 Hydrating Milky Toner' ist KEIN Ersatz für diesen Toner (andere, reichhaltigere Textur), sondern seit 2026-11-19 als zusätzlicher Barriere-Schritt für den Winter an Do/So Abend in der Routine (nach dem jeweiligen Haupttoner).",
     "Green Tea Ceramide Milk Barrier Essence": "Ist Leer und aktuell nicht Teil der Routine. Falls wieder gewünscht: 'Glazing Milk Essence'.",
     "Niacinamide Glow Cream": "Ist leer. Wurde durch 'Zitcalm Anti-Redness Calming Moisturizer' ersetzt (ölfrei, non-comedogenic, beruhigend) -- siehe Hinweis zu 'Zitcalm Anti-Redness Calming Moisturizer', da auch das inzwischen leer ist.",
     "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)": "Nicht mehr am Donnerstag kombiniert mit AZID verwenden (rollte sich auf der Haut ab). Laut Inventar vom 2026-11-19 nur eine Geöffnet-Zeile vorhanden (aktiv an Di/Sa) -- die frühere RESERVE-Notiz zu einem dritten Verwendungstag war ein Irrtum.",
@@ -187,11 +195,9 @@
   },
   "reserveStock": [
     "Black Rice Hyaluronic Toner",
-    "C4 Hydrating Milky Toner",
     "345 Relief Cream Mist",
     "P18 Multi-Peptide Toner",
     "O10 Liquid Hydration",
-    "Advanced Snail 96 Mucin Power Essence",
     "Glazing Milk Essence",
     "Copper Peptide 3% + Peptide 13% Serum",
     "Derma-Peptides 35% Serum",
