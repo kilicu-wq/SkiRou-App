@@ -1,4 +1,4 @@
-var CACHE_NAME = "skirou-cache-v8";
+var CACHE_NAME = "skirou-cache-v9";
 var APP_SHELL = [
   "./",
   "./index.html",
