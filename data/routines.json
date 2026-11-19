@@ -1,6 +1,6 @@
 {
-  "stand": "2026-10-29",
-  "version": 3,
+  "stand": "2026-11-19",
+  "version": 4,
   "info": "JSON kennt keine Kommentare, daher hier als Datenfelder dokumentiert: 'ersatz' ist die priorisierte Ersatzliste pro aktivem Produkt (Reihenfolge = Priorität), 'ersatzHinweise' sind Freitext-Hinweise zu Produkten (z.B. ausgelaufene/ersetzte Produkte, Hinweise die nicht ins Prioritätslisten-Schema passen), 'hinweise' sind allgemeine Freitext-Hinweise zur Routine (nicht an ein einzelnes Produkt gebunden, z.B. laufende Tests), 'reserveStock' sind ungeoeffnete Reserveprodukte aktuell ausserhalb der Rotation, 'ausgeschlossen' sind Produkte, die bewusst nicht in der Routine verwendet werden. Wichtige Regel fuer eine spaetere Verknuepfung mit dem Inventar-Sheet: bei doppelten Produktnamen (z.B. durch eine Ungeoeffnet-Reserve desselben Produkts) gilt die Zeile mit Status 'Geoeffnet' als das aktuell genutzte Produkt, die Ungeoeffnet-Zeile ist Reserve.",
   "sets": {
     "Standard": {
@@ -28,7 +28,7 @@
           "morgen": [
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional/kurz" },
             { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
-            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set" },
             { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Test unter Make-up, ersetzt testweise das bisherige Cicaplast Gel B5 — leichter, zieht schneller ein" },
             { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
           ],
@@ -64,7 +64,7 @@
           "morgen": [
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional/kurz" },
             { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
-            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set" },
             { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Test unter Make-up, ersetzt testweise das bisherige Cicaplast Gel B5 — leichter, zieht schneller ein" },
             { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
           ],
@@ -99,7 +99,7 @@
           "morgen": [
             { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional/kurz" },
             { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
-            { "step": "Serum", "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set" },
             { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Test unter Make-up, ersetzt testweise das bisherige Cicaplast Gel B5 — leichter, zieht schneller ein" },
             { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Alternative: Weightless Sun Fluid SPF50+" }
           ],
@@ -170,34 +170,39 @@
       { "product": "Zitaid SOS Spray für Unreinheiten & Rötungen (Ersatz)" }
     ],
     "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)": [
-      { "product": "AAll Clear Serum (Geek & Gorgeous, 15% Azelainsäure)", "note": "inhaltlich nahezu identisch (ebenfalls 15% Azelainsäure) -- als Rotations-Nachfolger einsetzen, nicht zusätzlich zur Routine hinzufügen" }
+      { "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)", "note": "Ungeöffnet-Reserve laut Inventar" },
+      { "product": "AAll Clear Azelaic Acid Serum", "note": "inhaltlich nahezu identisch (ebenfalls 15% Azelainsäure) -- als Rotations-Nachfolger einsetzen, nicht zusätzlich zur Routine hinzufügen" }
+    ],
+    "Pure Glycerin Face Serum (Oversized Edition)": [
+      { "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Ungeöffnet-Reserve laut Inventar" }
     ]
   },
   "ersatzHinweise": {
     "No.4 Toner Hydrating Glow Mineral": "Ursprüngliches Hauptprodukt ist leer. Die bisherige Ersatz-Zeile 'No.4 Toner Hydrating Glow Mineral (Ersatz)' ist seit 2026-10-29 das aktive Produkt in der Routine (Status im Sheet auf Geöffnet setzen, falls noch nicht geschehen). Kein weiterer Ersatz mehr vorhanden -- bei erneutem Leerwerden siehe Ersatz-Eintrag für 'No.4 Toner Hydrating Glow Mineral (Ersatz)' (-> Black Rice Hyaluronic Toner).",
     "Madagascar Centella Probio-Cica Essence Toner": "'C4 Hydrating Milky Toner' ist KEIN direkter Ersatz (milchige, reichhaltigere Textur) -- nur bei Bedarf als zusätzliche Barriere-Pflege am Abend.",
     "Green Tea Ceramide Milk Barrier Essence": "Ist Leer und aktuell nicht Teil der Routine. Falls wieder gewünscht: 'Glazing Milk Essence'.",
-    "Niacinamide Glow Cream": "Ist leer. Ersetzt durch 'Zitcalm Anti-Redness Calming Moisturizer' (ölfrei, non-comedogenic, beruhigend -- passt zur öligen T-Zone und unterstützt zusätzlich bei Kinn-Unreinheiten).",
-    "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)": "Laut RESERVE-Notiz weiterhin an Di/Mi/Sa in Verwendung -- in der aktuellen Mi-Abend-Routine aber nicht enthalten (nur Di/Sa), bitte bei Gelegenheit gegenchecken. Nicht mehr am Donnerstag kombiniert mit AZID verwenden."
+    "Niacinamide Glow Cream": "Ist leer. Ersetzt durch 'Zitcalm Anti-Redness Calming Moisturizer' (ölfrei, non-comedogenic, beruhigend -- passt zur öligen T-Zone und unterstützt zusätzlich bei Kinn-Unreinheiten). Hinweis: 'Zitcalm Anti-Redness Calming Moisturizer' ist laut Inventar vom 2026-11-19 nun seinerseits leer, siehe offene Rückfrage.",
+    "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)": "Nicht mehr am Donnerstag kombiniert mit AZID verwenden (rollte sich auf der Haut ab). Laut Inventar vom 2026-11-19 nur eine Geöffnet-Zeile vorhanden (aktiv an Di/Sa) -- die frühere RESERVE-Notiz zu einem dritten Verwendungstag war ein Irrtum.",
+    "Green Tomato NMN Pore Lifting Ampoule (5% SAP)": "Ist seit 2026-11-19 leer. Ersetzt durch 'Green Tomato NMN Pore-Tightening Ampoule Set' (war zuvor ungeöffnete Reserve, ist jetzt die aktive Geöffnet-Zeile)."
   },
   "reserveStock": [
     "Black Rice Hyaluronic Toner",
     "C4 Hydrating Milky Toner",
     "345 Relief Cream Mist",
+    "P18 Multi-Peptide Toner",
     "O10 Liquid Hydration",
     "Advanced Snail 96 Mucin Power Essence",
     "Glazing Milk Essence",
     "Copper Peptide 3% + Peptide 13% Serum",
     "Derma-Peptides 35% Serum",
-    "Green Tomato NMN Pore-Tightening Ampoule Set",
     "Zinc Tea SOS Calming Serum (3-Tage-Trial)",
     "Zero Pore Pad (AHA/BHA)",
     "Cicaplast Baume B5+",
+    "Panthenol Comfort",
     "Aqua Squalane Moisturizing Cream",
-    "Pizisok Reinigungspads",
+    "Pizisok Pizi-Cool-lina Reinigungspads (40 Stk.)",
     "Take The Day Off™ Charcoal Cleansing Balm",
-    "Ultra Light Invisible Sunscreen SPF50 (Cosrx)",
-    "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)"
+    "Ultra Light Invisible Sunscreen SPF50 (Cosrx)"
   ],
   "ausgeschlossen": [
     { "product": "A Retinyl Retinoate Serum (0,1%/0,06%)", "grund": "Schwangerschaft/Stillzeit" },
