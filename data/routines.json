@@ -1,0 +1,231 @@
+{
+  "stand": "2026-11-19",
+  "version": 4,
+  "info": "JSON kennt keine Kommentare, daher hier als Datenfelder dokumentiert: 'ersatz' ist die priorisierte Ersatzliste pro aktivem Produkt (Reihenfolge = Priorität), 'ersatzHinweise' sind Freitext-Hinweise zu Ersatzprodukten, 'hinweise' sind allgemeine Regeln/Hinweise zur Routine, 'reserveStock' sind ungeoeffnete Reserveprodukte ausserhalb der Rotation, 'ausgeschlossen' sind Produkte, die bewusst nicht in der Routine verwendet werden (inkl. leerer/nicht mehr vorhandener). Regel fuer die Verknuepfung mit dem Inventar-Sheet: bei doppelten Produktnamen gilt die Zeile mit Status 'Geoeffnet' als das genutzte Produkt, die Ungeoeffnet-Zeile ist Reserve.",
+  "sets": {
+    "Standard": {
+      "label": "Standard",
+      "days": {
+        "Mo": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional, oder nur Wasser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5", "note": "dünn, 1–2 Minuten einziehen lassen" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "A5 Balancing Toner" },
+            { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
+            { "step": "Serum", "product": "Niacinamide 10% + Zinc 1%", "note": "nur T-Zone" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+", "note": "zusätzlich Wangen/Kinn" }
+          ]
+        },
+        "Di": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set", "note": "Nachfolger der leeren 5%-SAP-Ampulle, gleiche Produktlinie" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Peeling", "product": "Lactic Acid 10% + HA" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "Serum", "product": "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Baume B5+", "note": "zusätzlich trockene Stellen (Wangen/Kinn): dünne Schicht als Abschluss, Winterpflege nach dem Peeling" }
+          ]
+        },
+        "Mi": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional, oder nur Wasser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5", "note": "dünn, 1–2 Minuten einziehen lassen" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Alternative: Weightless Sun Fluid SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Essenz", "product": "Glazing Milk Essence", "note": "neu, Nachfolger der leeren Green Tea Ceramide Milk" },
+            { "step": "Serum", "product": "Copper Peptide 3% + Peptide 13% Serum", "note": "neu. Tipp: bei akuten Unreinheiten stattdessen \"Zinc Teca Blemish Serum\"" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5", "note": "T-Zone, ersetzt die leere Zitcalm" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream", "note": "Wangen/Kinn" }
+          ]
+        },
+        "Do": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set", "note": "Nachfolger der leeren 5%-SAP-Ampulle, gleiche Produktlinie" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Serum", "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "Feuchtigkeitscreme", "product": "Urea Cica Repair+" }
+          ]
+        },
+        "Fr": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional, oder nur Wasser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5", "note": "dünn, 1–2 Minuten einziehen lassen" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Peeling", "product": "Lactic Acid 10% + HA" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "Serum", "product": "Zinc Teca Blemish Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Baume B5+", "note": "zusätzlich trockene Stellen" }
+          ]
+        },
+        "Sa": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner" },
+            { "step": "Serum", "product": "Green Tomato NMN Pore-Tightening Ampoule Set", "note": "Nachfolger der leeren 5%-SAP-Ampulle, gleiche Produktlinie" },
+            { "step": "Serum", "product": "Pure Glycerin Face Serum (Oversized Edition)" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Alternative: Weightless Sun Fluid SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Essenz", "product": "Gluca Mune Essence (3D Humid Matrix)" },
+            { "step": "Serum", "product": "Copper Peptide 3% + Peptide 13% Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Maske", "product": "Drink Up Intensive Overnight Hydrating Mask", "note": "optional" }
+          ]
+        },
+        "So": {
+          "morgen": [
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser", "note": "optional, oder nur Wasser" },
+            { "step": "Toner", "product": "No.4 Toner Hydrating Glow Mineral (Ersatz)" },
+            { "step": "Serum", "product": "Ascorbic C15 Vitamin C Serum" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Gel B5", "note": "dünn, 1–2 Minuten einziehen lassen" },
+            { "step": "SPF", "product": "UV Aqua Rich Watery Hold Cream SPF50+" }
+          ],
+          "abend": [
+            { "step": "Reinigung", "product": "Oil-Based Cleanser" },
+            { "step": "Reinigung", "product": "Hydrating Glycerin Body Cleanser" },
+            { "step": "Toner", "product": "Madagascar Centella Probio-Cica Essence Toner", "note": "Tipp: Wenn die Haut nach einigen Wochen rau wirkt und nicht spannt, kann vor dem Toner optional ein drittes Peeling mit \"Lactic Acid 10% + HA\" ergänzt werden." },
+            { "step": "Serum", "product": "Ceramide Treatment (Ceramide 3%, Ectoine 1%, Cica 1%)", "note": "Tipp: Bei akuten Unreinheiten am Kinn stattdessen \"AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)\" verwenden – nicht beides kombinieren, das rollt sich ab." },
+            { "step": "Feuchtigkeitscreme", "product": "Proteo-Repair Cream" },
+            { "step": "Feuchtigkeitscreme", "product": "Cicaplast Baume B5+", "note": "zusätzlich trockene Stellen" }
+          ]
+        }
+      }
+    }
+  },
+  "adHoc": [
+    { "step": "Sonstiges", "product": "Zitaid SOS Spray für Unreinheiten & Rötungen", "note": "Bei Bedarf, punktuell auf Unreinheiten am Kinn" }
+  ],
+  "hinweise": [
+    "Wochenrhythmus abends (Winter): 2 Peeling-Abende (Di, Fr), 2 Azelainsäure-Abende (Mo mild mit A5 Toner, Do mit AZID), 3 Erholungs-Abende (Mi, Sa, So).",
+    "Nie zwei Peelings an aufeinanderfolgenden Abenden.",
+    "An Peeling-Abenden keine Urea-Creme -- kann auf frisch gepeelter Haut brennen.",
+    "Morgens maximal 4 Schichten inkl. SPF (unter Make-up): keine Essenz, kein A5 Toner, keine reichhaltigen Cremes."
+  ],
+  "ersatz": {
+    "Oil-Based Cleanser": [
+      { "product": "Oil-Based Cleanser", "note": "Ungeöffnet-Reserve laut Inventar" },
+      { "product": "Take The Day Off™ Charcoal Cleansing Balm" }
+    ],
+    "Hydrating Glycerin Body Cleanser": [
+      { "product": "Hydrating Glycerin Body Cleanser", "note": "Ungeöffnet-Reserve laut Inventar" },
+      { "product": "Fresh Green Rice Mochi Cleanser", "note": "enthält Parfum, nur Notlösung" }
+    ],
+    "No.4 Toner Hydrating Glow Mineral (Ersatz)": [
+      { "product": "Black Rice Hyaluronic Toner", "note": "wässrig" }
+    ],
+    "Madagascar Centella Probio-Cica Essence Toner": [
+      { "product": "Black Rice Hyaluronic Toner", "note": "wässrig" },
+      { "product": "345 Relief Cream Mist", "note": "gleiche beruhigende Wirkstoffe" }
+    ],
+    "Green Tomato NMN Pore-Tightening Ampoule Set": [
+      { "product": "Ascorbic C15 Vitamin C Serum", "note": "kein gleichwertiger Ersatz in Reserve -- bei Leer an diesen Morgen das Vitamin C Serum verwenden" }
+    ],
+    "Ascorbic C15 Vitamin C Serum": [
+      { "product": "Ascorbic C15 Vitamin C Serum (Ersatz)" }
+    ],
+    "Pure Glycerin Face Serum (Oversized Edition)": [
+      { "product": "Pure Glycerin Face Serum (Oversized Edition)", "note": "Ungeöffnet-Reserve laut Inventar" }
+    ],
+    "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)": [
+      { "product": "AZID (Azelainsäure 15%, Hafer 1%, Carnosin 1%)", "note": "Ungeöffnet-Reserve laut Inventar" },
+      { "product": "AAll Clear Azelaic Acid Serum", "note": "gleicher Wirkstoff, nicht zusätzlich verwenden" }
+    ],
+    "Cicaplast Gel B5": [
+      { "product": "Aqua Squalane Moisturizing Cream (Wrinkle Lifting)" }
+    ],
+    "Urea Cica Repair+": [
+      { "product": "Panthenol Comfort", "note": "Mixa; im Sheet als Marke \"Mila\" eingetragen" }
+    ],
+    "Proteo-Repair Cream": [
+      { "product": "Aqua Squalane Moisturizing Cream (Wrinkle Lifting)" }
+    ],
+    "UV Aqua Rich Watery Hold Cream SPF50+": [
+      { "product": "UV Aqua Rich Watery Hold Cream SPF50+", "note": "Ungeöffnet-Reserve laut Inventar (Backup)" },
+      { "product": "Weightless Sun Fluid SPF50+" },
+      { "product": "Ultra Light Invisible Sunscreen SPF50" }
+    ],
+    "Zitaid SOS Spray für Unreinheiten & Rötungen": [
+      { "product": "Zitaid SOS Spray für Unreinheiten & Rötungen (Ersatz)" }
+    ]
+  },
+  "ersatzHinweise": {
+    "Madagascar Centella Probio-Cica Essence Toner": "'C4 Hydrating Milky Toner' ist wegen der milchigen Textur KEIN direkter Ersatz."
+  },
+  "reserveStock": [
+    "Black Rice Hyaluronic Toner",
+    "C4 Hydrating Milky Toner",
+    "345 Relief Cream Mist",
+    "Advanced Snail 96 Mucin Power Essence",
+    "Derma-Peptides 35% Serum",
+    "Zinc Tea SOS Calming Serum (3-Tage-Trial)",
+    "Aqua Squalane Moisturizing Cream (Wrinkle Lifting)",
+    "Panthenol Comfort",
+    "Pizisok Pizi-Cool-lina Reinigungspads (40 Stk.)",
+    "Take The Day Off™ Charcoal Cleansing Balm",
+    "AAll Clear Azelaic Acid Serum",
+    "Ultra Light Invisible Sunscreen SPF50"
+  ],
+  "ausgeschlossen": [
+    { "product": "A Retinyl Retinoate Serum (0,1%/0,06%)", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "UV Essence Waterfull+ Tone-Up Sun Cream SPF50+", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "AHA 30% + BHA 2% Peeling Solution", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "No.9 Glow Boosting Toner (NAD+ PDRN)", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "PDRN Lifting Serum 18902", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "PDRN Pink Peptide Serum", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "PDRN Capsule Cream 100 (Elasticity & Balancing)", "grund": "Schwangerschaft/Stillzeit" },
+    { "product": "P18 Multi-Peptide Toner", "grund": "Schwangerschaft/Stillzeit", "note": "enthält 1% Rice PDRN / Sodium DNA, gleiche vorsorgliche Regel wie bei den anderen PDRN-Produkten" },
+    { "product": "Zero Pore Pad (AHA/BHA)", "grund": "Auf Wunsch aktuell kein BHA", "note": "bleibt ungeöffnet in Reserve" },
+    { "product": "Well-Aging Body Oil", "grund": "Nicht fürs Gesicht" },
+    { "product": "UV Aqua Rich Watery Essence Sunscreen SPF50", "grund": "Vorerst nicht verwenden, bis die Inhaltsstoffe geprüft sind", "note": "die geprüfte Variante enthält Octinoxat, Alkohol und Parfum" },
+    { "product": "No.4 Toner Hydrating Glow Mineral", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "Green Tea Ceramide Milk Barrier Essence", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "Green Tomato NMN Pore Lifting Ampoule (5% SAP)", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "Zitcalm Anti-Redness Calming Moisturizer", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "Niacinamide Glow Cream", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "O10 Liquid Hydration", "grund": "Leer bzw. nicht mehr im Inventar" },
+    { "product": "Vitamin C Glow Revealing Microdermabrasion", "grund": "Leer bzw. nicht mehr im Inventar" }
+  ]
+}
