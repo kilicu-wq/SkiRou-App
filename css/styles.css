@@ -304,45 +304,6 @@ body {
   min-width: 0;
 }
 
-.step-move {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex-shrink: 0;
-}
-
-.move-btn {
-  width: 32px;
-  height: 26px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text-secondary);
-  font-size: 11px;
-  cursor: pointer;
-  padding: 0;
-}
-
-.move-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.reset-order {
-  display: block;
-  margin: 10px auto 0;
-  background: none;
-  border: none;
-  color: var(--text-accent);
-  font-size: 13px;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.reset-order[hidden] {
-  display: none;
-}
-
 .step-name {
   font-size: 14px;
   font-weight: 500;
