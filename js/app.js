@@ -6,6 +6,7 @@
     day: "skincare.selectedDay",
     time: "skincare.selectedTime",
     inventoryCache: "skincare.inventoryCache",
+    stepOrder: "skirou.stepOrder",
   };
 
   var STATUS_CLASS = {
@@ -161,21 +162,94 @@
     return row;
   }
 
+  // ---- Eigene Reihenfolge (pro Gerät) ----
+  // Gespeichert wird die Reihenfolge als Index-Liste plus Signatur der
+  // Original-Schritte: Ändert sich die Routine in data/routines.json,
+  // passt die Signatur nicht mehr und die alte Sortierung wird verworfen.
+
+  function orderKey() {
+    return state.set + "|" + state.day + "|" + state.time;
+  }
+
+  function stepsSignature(steps) {
+    return steps.map(function (s) { return s.step + ":" + s.product; }).join("\n");
+  }
+
+  function readOrders() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.stepOrder)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function writeOrders(orders) {
+    try {
+      localStorage.setItem(STORAGE_KEYS.stepOrder, JSON.stringify(orders));
+    } catch (e) { /* Speicher nicht verfügbar - Sortierung gilt nur bis zum Neuladen */ }
+  }
+
+  function savedOrder(steps) {
+    var entry = readOrders()[orderKey()];
+    if (!entry || entry.sig !== stepsSignature(steps) || entry.order.length !== steps.length) {
+      return null;
+    }
+    return entry.order;
+  }
+
+  function moveStep(steps, from, to) {
+    var order = savedOrder(steps) || steps.map(function (_, i) { return i; });
+    var moved = order.splice(from, 1)[0];
+    order.splice(to, 0, moved);
+    var orders = readOrders();
+    orders[orderKey()] = { sig: stepsSignature(steps), order: order };
+    writeOrders(orders);
+    renderSteps();
+  }
+
+  function resetOrder() {
+    var orders = readOrders();
+    delete orders[orderKey()];
+    writeOrders(orders);
+    renderSteps();
+  }
+
+  function buildMoveButtons(steps, position) {
+    var wrap = document.createElement("div");
+    wrap.className = "step-move";
+    [["▲", -1, "nach oben"], ["▼", 1, "nach unten"]].forEach(function (cfg) {
+      var btn = document.createElement("button");
+      btn.className = "move-btn";
+      btn.textContent = cfg[0];
+      btn.setAttribute("aria-label", "Schritt " + cfg[2] + " verschieben");
+      var target = position + cfg[1];
+      btn.disabled = target < 0 || target >= steps.length;
+      btn.addEventListener("click", function () { moveStep(steps, position, target); });
+      wrap.appendChild(btn);
+    });
+    return wrap;
+  }
+
   function renderSteps() {
     var list = document.getElementById("step-list");
     var emptyHint = document.getElementById("empty-routine");
+    var resetBtn = document.getElementById("reset-order");
     var routineSet = routineData.sets[state.set];
     var dayPlan = routineSet && routineSet.days[state.day];
     var steps = (dayPlan && dayPlan[state.time]) || [];
+    var order = savedOrder(steps);
 
     list.innerHTML = "";
+    resetBtn.hidden = !order;
 
     if (steps.length === 0) {
       emptyHint.hidden = false;
     } else {
       emptyHint.hidden = true;
-      steps.forEach(function (step, index) {
-        list.appendChild(buildStepRow(step, index));
+      (order || steps.map(function (_, i) { return i; })).forEach(function (stepIndex, position) {
+        var row = buildStepRow(steps[stepIndex], position);
+        row.appendChild(buildMoveButtons(steps, position));
+        list.appendChild(row);
       });
     }
 
@@ -397,6 +471,7 @@
     initTabs();
     initDayRow();
     initTimeToggle();
+    document.getElementById("reset-order").addEventListener("click", resetOrder);
     initInventorySearch();
     initOfflineBadge();
     registerServiceWorker();
